@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open("sample_input.txt","r") 
+sys.stdin = open("Minmax input.txt","r") 
 
 T = int(input())
 
