@@ -23,8 +23,7 @@ for i in range(T):
                 j+=1
                 count += 1
                 K = KI
-                
-                
+                  
         elif s == a[-1]:
             if K >= N-a[-1]:
                 j+=1
