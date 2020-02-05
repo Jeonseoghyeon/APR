@@ -12,7 +12,7 @@ for i in range(2):
                 print(bit)
 '''
 
-'''
+
 #간결하게 부분집합을 생성하는 방법
 
 arr = [1,2,3]
@@ -25,4 +25,3 @@ for i in range(1<<n): # 1<<n : 부분 집합의 개수 (1<<n : 8)
         if i & (1<<j): # i의 j번째 비트가 1이면 
             sub.append(arr[j]) # j번째 원소 출력
     print(sub)
-'''
