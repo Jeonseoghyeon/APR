@@ -7,29 +7,28 @@ for i in range(1,tc+1):
     N,K = list(map(int,input().split()))
     arr=[]
     
-    # print(N,K)
     for j in range(N):
         arr += [list(map(int,input().split()))] 
         count_k=0
     for k in range(N): 
-        for l in range(N-K+1): 
+        for l in range(N-K+1):  # 가로 카운팅
             count=0
             for m in range(K):  
-                count += arr[k][m+l]
-                if count == K:
-                    if l == N-K:
+                count += arr[k][m+l] # 오른쪽으로 쭉 이동하면서 카운트
+                if count == K: # 카운트가 단어 길이와 일치할 때
+                    if l == N-K: # 마지막에 도착했을 때
                         if arr[k][l-1] ==0:
                             count_k+=1
                         
-                    elif l == 0:
+                    elif l == 0: # 첫 시작일 때
                         if arr[k][l+K]==0:
                             count_k+=1
                         
                     else:
-                        if arr[k][l-1]==0 and arr[k][l+K]==0:
+                        if arr[k][l-1]==0 and arr[k][l+K]==0: #중간일 때는 그 다음번 인덱스가 0이면 카운트 해야 하니까
                             count_k+=1
                             
-        for n in range(N-K+1):
+        for n in range(N-K+1): # 세로 카운팅
             count = 0
             for o in range(K):
                 count += arr[o+n][k]
@@ -46,14 +45,3 @@ for i in range(1,tc+1):
                             count_k+=1
 
     print('#{} {}'.format(i,count_k))
-    
-#1 2
-#2 6
-#3 6
-#4 0
-#5 14
-#6 2
-#7 45
-#8 0
-#9 98
-#10 7

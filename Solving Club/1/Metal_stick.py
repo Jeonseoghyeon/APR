@@ -1,26 +1,16 @@
 import sys
-sys.stdin = open("Metal_stick input.txt","r")
+sys.stdin = open("Metal_stick_input.txt","r")
 
-T=int(input())
-for tc in range(1,T+1):
-    n=int(input())
-    arr=list(map(int,input().split()))
-    start=[]
-    for ind,val in enumerate(arr):
-        if arr.count(val)==1 and ind%2==0:
-            start.append(arr[ind])
-            start.append(arr[ind+1])
-    while n>1:
-        for ind,val in enumerate(arr):
-            if start[-1]==val and ind%2==0:
-                start.append(arr[ind])
-                start.append(arr[ind+1])
-        n-=1
-    print('#{} '.format(tc),end='')
-    for k in start:
-        print(k,end=' ')
-    print('')
-
+T = int(input())
+for _ in range(T):
+    n = int(input())
+    n_list = list(map(int, input().split()))
+    for k in range(n):
+        for i in range(0,n*2,2):
+            for j in range(i+3,n*2,2):
+                if n_list[i] == n_list[j]:
+                    n_list[j-1:j+1],n_list[i:i+2] = n_list[i:i+2],n_list[j-1:j+1]
+    print('#{} {}'.format(_+1, " ".join(map(str,n_list))))
         
 
 

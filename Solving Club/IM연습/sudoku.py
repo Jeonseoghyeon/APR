@@ -1,14 +1,11 @@
 import sys
-sys.stdin = open("sudoku input.txt","r")
+sys.stdin = open("sudoku_input.txt","r")
 
 tc = int(input())
 dx = [0,1,1,1,0,-1,-1,-1]
 dy = [1,1,0,-1,-1,-1,0,1]
 for i in range(1,tc+1):
     x = []
-    sum_pa = set()
-    sum_ver = set()
-    sum_sq = set()
     result = 1
     for j in range(9): # 리스트 형성
         x += [list(map(int,input().split()))]
@@ -23,7 +20,6 @@ for i in range(1,tc+1):
         else:
             result *=0
         
-
     for m in range(1,8,3):
         for n in range(1,8,3):
             sum_sq = set()

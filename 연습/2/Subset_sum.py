@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open("Subset sum input.txt","r")
+sys.stdin = open("Subset_sum_input.txt","r")
 tc = int(input())
 
 for i in range(tc):

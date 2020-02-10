@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open("rotate input.txt","r")
+sys.stdin = open("rotate_input.txt","r")
 
 tc = int(input())
 for i in range(1,tc+1):

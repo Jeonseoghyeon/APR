@@ -29,8 +29,3 @@ for i in range(1,tc+1):
                 max = sum_mul
         result = max
     print('#{} {}'.format(i,result))
-
-    
-
-        
-

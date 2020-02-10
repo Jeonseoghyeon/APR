@@ -15,3 +15,5 @@ for i in range(tc):
             print('1',end = ' ')
             print("{} ".format(j-1)*(j-2),end ='')
             print('1')
+
+# x 11 / 현석이

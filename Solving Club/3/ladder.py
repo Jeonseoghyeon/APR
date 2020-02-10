@@ -11,7 +11,7 @@ for p in range(1,11): # 10번
     d = []
     for u in range(len(start)):
         if start[u] == 1:
-            d += [u]
+            d += [u] # 스타트 하는 인덱스들 저장 : d
     min = 999
     min_d=0
 
@@ -19,7 +19,7 @@ for p in range(1,11): # 10번
         n = a
         j = 0 
         count = 0
-        while j != 99:
+        while j != 99: # 99열일 때 : 도착했을 때
             if i == 0:
                 if x[j][i+1]!=1: #오른쪽 확인
                     j+=1
