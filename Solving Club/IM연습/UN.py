@@ -16,7 +16,6 @@ for i in range(1,2+1):
             if x[k][l] == 99:
                 continue
             if x[k][l] != 0:
-                
                 a = l
                 b = k
                 while x[k][l] != 0:
