@@ -35,14 +35,12 @@ for i in range(1,tc+1): #TC별 시작
                         break
                 if not check:
                     break
-                if count >= max_count:
+                if count > max_count:
                     max_count = count
-                    max_room += [arr[ny][nx]]
-        if i == 22:
-            max_room = [8225]
-        elif i == 23:
-            max_room = [35]
-                        
+                    max_room = []
+                    max_room.append(arr[ny][nx])
+                elif count == max_count:
+                    max_room.append(arr[ny][nx])
     
     print("#{} {} {}".format(i,min(max_room),max_count))
     
@@ -53,8 +51,8 @@ for i in range(1,tc+1): #TC별 시작
 #3 149 2
 #4 2 45
 #5 2 23
-#6 1 2
-#7 1 4
+#6 1 2 d
+#7 1 4 d
 #8 5 17
 #9 4 2
 #10 1 35
@@ -64,13 +62,13 @@ for i in range(1,tc+1): #TC별 시작
 #14 113 2
 #15 12 32
 #16 6 9
-#17 1 4
+#17 1 4 d
 #18 36 42
 #19 204 2
 #20 7 14
 #21 4 2
-#22 8225 2200 얘가 문제
-#23 35 3 얘가 문제
+#22 8225 2200 d
+#23 35 3 
 #24 2 2
 #25 613 2
 #26 33 2

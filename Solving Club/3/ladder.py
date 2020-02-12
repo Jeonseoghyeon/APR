@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open("ladder input.txt","r")
+sys.stdin = open("ladder_input.txt","r")
 
 for p in range(1,11): # 10번
     tc_number = int(input())
