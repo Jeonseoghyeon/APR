@@ -27,11 +27,10 @@ for i in range(1,tc+1):
                 # for h in visited:
                 #     print(h)
                 ans.append([dx,dy])
-                ans2.append(dx*dy)
-
-    # ans.sort(key=lambda x:x[0]*x[1] )
-    # print(ans)
-    
+    print("#{} ".format(i),end='')
+    for an in range(len(ans)):
+        print(ans[an][0],ans[an][1], end=' ')
+    print()
 
 
 #1 2 2 1 1 4 
