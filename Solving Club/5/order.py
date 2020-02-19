@@ -24,7 +24,11 @@ for tc in range(3):
     visited = [lines[nodei][0]]
     stack = [lines[nodei][0]]
     while len(set(visited)) != num_node:
-        print("stack:{}".format(stack))
+        print("stack:{}END".format(stack))
+        # if len(stack) == 0:
+        #     print("들어옴")
+        #     nodei += 1
+        #     stack.append(lines[nodei][0])
         node = stack.pop()
         print("node:{}".format(node))
         for j in range(1,num_node+1):
