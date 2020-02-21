@@ -32,7 +32,11 @@ for tc in range(1, t+1):
         if st - ed == 0:
             return st
         v1 = tournament(st, (st+ed)//2)
+        print(st,ed)
         v2 = tournament((st+ed)//2+1, ed)
+        print(st,ed)
         return gawibawibo(v1,v2)
     result = tournament(1,len(lst))
     print('#{} {}'.format(tc,result))
+    print()
+    print()
