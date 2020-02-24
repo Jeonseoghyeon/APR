@@ -1,8 +1,8 @@
 import sys
 sys.stdin = open("order_input.txt","r")
 
-for tc in range(3):
-    print(f"###############{tc+1}#############", end='\n\n\n')
+for tc in range(1,4):
+    print(f"###############{tc}#############", end='\n\n\n')
     num_node, num_line = list(map(int,input().split()))
     line = list(map(int,input().split()))
     lines = []
@@ -19,24 +19,13 @@ for tc in range(3):
     for xxxxx in range(num_line+1):
         print(near_arr[xxxxx])        
 
-#BFS 시작하자!
-    nodei = 0
-    visited = [lines[nodei][0]]
-    stack = [lines[nodei][0]]
+    visited = [lines[0][0]]
+    stack = [lines[x][0] for x in range(len(lines))]
     while len(set(visited)) != num_node:
-        print("stack:{}END".format(stack))
-        # if len(stack) == 0:
-        #     print("들어옴")
-        #     nodei += 1
-        #     stack.append(lines[nodei][0])
         node = stack.pop()
-        print("node:{}".format(node))
+        print(stack,node)
         for j in range(1,num_node+1):
-            print(node,j)   
             if near_arr[node][j] == 1:
                 stack.append(j)
                 visited.append(j)
-                print("추가")
-                print(stack)
-                print("vs{}".format(visited))
-    
+                print(visited)
