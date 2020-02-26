@@ -28,8 +28,13 @@ for i in range(1,tc+1):
                 #     print(h)
                 ans.append([dx,dy])
     print("#{} ".format(i),end='')
+    for aaaa in ans:
+        aaaa.insert(0,aaaa[0]*aaaa[1])
+    ans = sorted(ans)
     for an in range(len(ans)):
-        print(ans[an][0],ans[an][1], end=' ')
+        if an == 0:
+            print(len(ans),end=' ')
+        print(ans[an][1],ans[an][2], end=' ')
     print()
 
 
