@@ -9,11 +9,9 @@ for i in range(1,t+1):
     else:
         T.append(0)
     P.append(y)
-
+N = len(T)
 print(T,P)
 for j in range(len(T)):
     for k in range(len(T)):
         pass
         
-
-    
