@@ -54,7 +54,7 @@ for tc in range(1,tc+1):
                 cals.append('*')
             else:
                 cals.append('/')
-    cals_p = permutations(cals) # 연산 Permutations 다 출력
+    cals_p = set(permutations(cals)) # 연산 Permutations 다 출력
     
     min_cal = 100000000
     max_cal = -100000000
@@ -65,7 +65,7 @@ for tc in range(1,tc+1):
             max_cal = cal(x)
         if cal(x) < min_cal:
             min_cal = cal(x)
-    print(max_cal - min_cal)
+    print("#{} {}".format(tc,max_cal - min_cal))
 
     
     
