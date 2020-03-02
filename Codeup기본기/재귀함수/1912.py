@@ -1,0 +1,10 @@
+from sys import setrecursionlimit
+setrecursionlimit(1000000)
+
+def fac(x):
+    if x == 1:
+        return 1
+    else:
+        return x*fac(x-1)
+
+print(fac(int(input())))
