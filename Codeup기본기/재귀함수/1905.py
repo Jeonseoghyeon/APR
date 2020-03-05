@@ -1,15 +1,15 @@
 import sys
 sys.setrecursionlimit(1000000)
 
-sum_my = 0
-
-def my_sum(x):
-    global sum_my
-    if x == 1:
-        sum_my += x
+def my_sum(start,end):
+    global sumn
+    if start == end+1:
+        return
     else:
-        sum_my += x
-        my_sum(x-1)
-    return sum_my
+        sumn += start
+        my_sum(start+1,end)
+    return sumn
 
-print(my_sum(int(input())))
+x = int(input())
+sumn = 0
+print(my_sum(1,x))

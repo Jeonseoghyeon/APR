@@ -14,9 +14,6 @@ def Change_into_Three_months(tuple):
         
     return sum(new_JanToDec_Prices)
 
-
-    
-
 for tc in range(1,int(input())+1):
     Prices = list(map(int,input().split()))
     JanToDec = list(map(int,input().split()))

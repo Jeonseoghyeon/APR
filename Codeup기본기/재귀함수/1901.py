@@ -1,9 +1,10 @@
-def goup(x):
-    if x == 1:
+def goup(n,k):
+    if n == k:
         print(1)
-        return 1
-    goup(x-1)
-    print(x)
-    
+        return
+    else:
+        goup(n-1,k)
+        print(n)
 
-goup(int(input()))
+x = int(input())
+goup(x,1)

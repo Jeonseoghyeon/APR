@@ -18,10 +18,10 @@ def dfs(x,y,temp):
             if 0<=nx<4 and 0<=ny<4:
                 stack.append([nx,ny,res+arr[nx][ny]])
 
-for tc in range(1,T+1):
+for tc in range(1,1+1):
     arr=[list(input().split()) for i in range(4)]
     result=set()
     for i in range(4):
         for j in range(4):
             dfs(i,j,arr[i][j])
-    print(len(result))
+    print("#{} {}".format(tc,len(result)))
