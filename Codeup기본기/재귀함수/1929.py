@@ -2,13 +2,12 @@ def f(N,K):
     if N == K:
         return
     elif N %2:
-        print(3*N+1)
         f(3*N+1,K)
-    else:
-        print(N//2)
+        print(3*N+1)
+    else:    
         f(N//2,K)
-
+        print(N//2)
 
 N = int(input())
-print(N)
 f(N,1)
+print(N)
