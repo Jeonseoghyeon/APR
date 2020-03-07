@@ -11,4 +11,7 @@ def my_bin(n,k): #
     
 
 n = int(input())
-my_bin(n,2)
+if n == 0:
+    print(0)
+else:
+    my_bin(n,2)
