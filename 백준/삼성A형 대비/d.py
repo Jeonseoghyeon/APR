@@ -8,7 +8,4 @@ for i in range(1<<N):
             subset.append(arr[j])
     if len(subset)==3:
         subset_list.append(subset)
-    print()
-print()
-
 print(subset_list)

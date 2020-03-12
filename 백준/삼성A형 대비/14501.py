@@ -1,24 +1,6 @@
-def f(start,end):
-    global sumX,maxX
-    if start+days[start] > end:
-        print("i",sumX)
-        return
-    elif start+days[start] == end:
-        if pays[start] == 1:
-            sumX += pays[start]
-        print("e",sumX)
-        return
-    else:
-        for i in range(start+days[start],end):
-            if i+days[i] <= N+1:
-                sumX+=pays[i]
-                print(i)
-            f(i,end)
-        
-    return sumX
-
-
-
+def dfs(start,end):
+    pass
+    
 N =int(input())
 days = [0]
 pays = [0]
@@ -28,11 +10,8 @@ for i in range(N):
     days.append(a)
     pays.append(b)
 print(days,pays)
-for j in range(1,N):
-    sumX=pays[j]
-    maxX=0
-    # print(j,'\n\n')
-    print(f(j,N))
+dfs(start,end)
+
 
 
 '''
