@@ -1,4 +1,4 @@
-# 1430 시작 1655 종료
+# 1530 시작 1645 종료
 def rotate_id(start,tim):
     if tim == -1:
         cog[start] = cog[start][1:] + cog[start][0]
@@ -37,4 +37,3 @@ for summ in range(1,5):
         sumX+=(1<<summ-1)
         
 print(sumX)
-
