@@ -1,0 +1,41 @@
+보기의 출력 결과 : xx1110x1x100011xxx11000111x1x00111010
+
+슈도코드
+
+# stringzip 함수 부분
+
+def stringzip(arr,x,y): # arr과 x축 크기 y축 크기를 stringzip 함수의 파라미터로 넣어준다
+    global result # 전역변수 result 값을 받아온다
+    
+    
+    if arr 내의 값들이 모두 흰색이라면:
+        do result <- result + "1" # :1"이라는 문자열을 더해준다.
+        return # 리턴해준다
+
+    elif arr 내의 값들이 모두 검정색이라면:
+        do result <- result + "0" # "0"이라는 문자열을 더해준다.
+        return # 리턴해준다
+
+    else: # arr 내의 값이 모두 흰색or 검정색이 아니라면
+        do x <- x//2 # x축을 반 나눠준다
+        do y <- y//2 # y축을 반 나눠준다
+        
+        do result <-result + "x" # "x"라는 문자열을 더해준다
+
+        do 왼쪽 위 영역에 맞는 zone1~4을 만들어 준다
+        
+        #4가지 경우로 나누어 재귀함수를 호출해준다.
+        do stringzip(zone1,x,y)        
+        do stringzip(zone2,x,y)
+        do stringzip(zone3,x,y)
+        do stringzip(zone4,x,y)
+	
+# Main 함수 부분
+
+N = int(input() # 그림의 크기를 가져온다
+arr = input값을 N번반큼 반복한 값을 list에 넣어준다
+
+stringzip(arr,N,N) # arr과 x축 크기 y축 크기를 stringzip 함수의 파라미터로 넣어준다, 함수 시작
+
+do 출력 (result)
+        
