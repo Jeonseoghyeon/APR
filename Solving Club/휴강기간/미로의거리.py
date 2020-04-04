@@ -11,7 +11,7 @@ def bfs(arr,y,x):
     dq.append([y,x])
     while dq:
         cnt+=1
-        for DQ in range(len(dq)): 
+        for DQ in range(len(dq)):  # 이부분을 최적화할 필요가 있음 -> 창완형 수정 코드 참고!
             node_y, node_x = dq.popleft()
             for i in range(4):
                 ny = node_y + dy[i]
