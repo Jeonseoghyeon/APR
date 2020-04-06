@@ -1,0 +1,153 @@
+1번
+
+def solution(inputString):
+    stack = []
+    cnt = 0
+    for i in inputString:
+        if i == "(" or i == "{" or i == "[" or i == "<":
+            stack.append(i)
+        elif i == ")":
+            if len(stack) > 0 and "(" in stack:
+                idx = stack.index("(")
+                stack.pop(idx)
+                cnt+=1
+            else:
+                return -1
+        elif i == "}":
+            if len(stack) > 0 and "{" in stack:
+                idx = stack.index("{")
+                stack.pop(idx)
+                cnt+=1
+            else:
+                return -1
+        elif i == "]":
+            if len(stack) > 0 and "[" in stack:
+                idx = stack.index("[")
+                stack.pop(idx)
+                cnt+=1
+            else:
+                return -1
+        elif i == ">":
+            if len(stack) > 0 and "<" in stack:
+                idx = stack.index("<")
+                stack.pop(idx)
+                cnt+=1
+            else:
+                return -1 
+              
+    answer = cnt
+    return answer
+
+2번
+
+from itertools import combinations
+def solution(answer_sheet, sheets):
+    jisu = 0
+    jisu_max = 0
+    x = range(len(sheets))
+    sheet_combs = combinations(x,2)
+    for i in sheet_combs:
+        len_cnt = 0
+        longest_cnt = 0
+        cnt = 0
+        sheet_1 = sheets[i[0]]
+        sheet_2 = sheets[i[1]]
+        for j in range(len(sheet_1)):
+            if sheet_1[j] == sheet_2[j]:
+                if sheet_1[j] != answer_sheet[j]:
+                    cnt+=1
+                    len_cnt +=1
+                else:  
+                    len_cnt = 0
+            else:
+                len_cnt = 0
+            if len_cnt >= longest_cnt:
+                longest_cnt = len_cnt
+        jisu = cnt + longest_cnt ** 2
+        if jisu >= jisu_max:
+            jisu_max = jisu
+            
+    answer = jisu_max
+    return answer
+
+
+3번
+
+
+
+from itertools import combinations
+
+def solution(road, n):
+    cnt = 0
+    max_cnt = 0
+    idx = []
+    for r in range(len(road)):
+        if road[r] == "0":
+            idx.append(r)
+    if len(idx) >= n:
+        idx_combs = combinations(idx,n)
+    else:
+        idx_combs = combinations(idx,len(idx))
+    for i in idx_combs: 
+        new_road = list(road[:])
+        for nr in i:
+            new_road[nr] = "1"
+        for s in new_road:
+            if s == "1":
+                cnt+=1
+            else:
+                cnt = 0
+            if cnt>=max_cnt:
+                max_cnt = cnt
+    answer = max_cnt
+    return answer
+
+4번
+
+def solution(snapshots, transactions):
+    answer = []
+    id_list = []
+    snapshots_list = [x[0] for x in snapshots]
+    for t in transactions:
+        if t[2] not in snapshots_list:
+            snapshots.append([t[2],"0"])
+    dict_a = {}
+    for i in snapshots:
+        dict_a[i[0]] = int(i[1])
+    for i in transactions:
+        if i[0] not in id_list:
+            id_list.append(i[0])
+            if i[1] == "SAVE":
+                dict_a[i[2]] += int(i[3])
+            elif i[1] == "WITHDRAW":
+                dict_a[i[2]] -= int(i[3])
+    for idx,value in dict_a.items():
+        answer.append([idx,str(value)])
+    answer.sort()
+    return answer
+
+
+5번
+
+def solution(dataSource, tags):
+    answer = []
+    stack = []
+    
+    for i in range(len(dataSource)):
+        cnt = 0
+        doc_num = dataSource[i].pop(0)
+
+        for j in dataSource[i]:
+            if j in tags:
+                cnt+=1
+        if cnt>=1:
+            stack.append([cnt,doc_num])
+            
+    stack.sort(key = lambda item: item[0], reverse=True)
+    
+    for r in stack:
+        answer.append(r[1])
+        if len(answer)>=10:
+            break
+            
+    return answer
