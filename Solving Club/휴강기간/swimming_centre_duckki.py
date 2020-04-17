@@ -1,3 +1,6 @@
+import sys
+sys.stdin = open("수영장_input.txt","r")
+
 def dfs(month, cost):
     global min_cost
     if month >= 12:
