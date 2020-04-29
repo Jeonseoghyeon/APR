@@ -1,18 +1,15 @@
-import sys
-sys.stdin = open("이진수_input.txt","r")
-
-T = int(input())
-for tc in range(1,T+1):
-    print("#{}".format(tc))
-    N, hex_num = input().split()
-    N = int(N)
-    y = 8
+for tc in range(1, int(input())+1):
+    num = input().split()[1]
     result = ''
-    for i in hex_num:
-        # print((bin(int(i,16)))[2:])
-        x = int(i,16)
-        for j in range(N):
-            print(x & (y >> j))
-            # result += str(x & (y >> j))
-    print(result)
-        
+    for x in num:
+        n = ord(x)
+        if 48 <= n <= 57:
+            n -= 48
+        else:
+            n -= 55
+        for i in range(3, -1, -1):
+            if n & (1 << i):
+                result += '1'
+            else:
+                result += '0'
+    print('#{} {}'.format(tc, result))
