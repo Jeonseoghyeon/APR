@@ -1,0 +1,52 @@
+# Logic
+# combinations을 이용해서 조합 구해주기
+# bfs를 이용해서 최단거리를 구해주기
+# distance가 짝,홀인 경우 나누어서 최단거리를 이용해서 간단하게 소요시간 구해주기
+    - 홀수일 경우 거리//2 + 1 ( 한명이 기다리면 되니까)
+    - 짝수일 경우 거리//2 ( 둘 다 동시에 도착하면 되니까)
+
+combinations 함수 itertools로부터 import
+
+dy,dx = [0,0,1,-1],[1,-1,0,0]
+
+def bfs(start_point,end_point):
+    global cnt
+    visit = []
+    queue = []
+    queue.append(start_point)
+
+    while end_point in queue:
+        node = queue.pop(0)
+        if node not in visit:
+            visit.append(node)
+            queue.extend(arr[node])
+
+    return cnt
+
+
+arr = N의 크기만큼 방을 가져오기
+
+start_points = []
+for y in range N:
+    for x in range N:
+        if arr[y][x] == 2:
+            start_points.append[[y,x]]
+
+start_points_comb = combinations(start_points,2)
+min_distance = 100 (N의 max가 10이므로)
+min_time = 0
+
+for start_end_point in start_points_comb:
+    cnt = 0
+    start_point = start_end_point[0] # 한 지점을 start_point로 설정
+    end_point = start_end_point[1] # 한 지점을 end_point로 설정
+    distance = get_distance(start_point,end_point)
+    if distance < min_distance:
+        min_distance = distance
+    
+if min_distance%2:
+    min_time = min_distance//2 + 1
+else:
+    min_time = min_distance//2
+
+출력 min_time
