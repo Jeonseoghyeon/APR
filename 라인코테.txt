@@ -1,4 +1,4 @@
-1번
+1번!
 
 def solution(inputString):
     stack = []
